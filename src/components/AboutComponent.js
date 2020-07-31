@@ -3,7 +3,7 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 
 
-function RenderLeader({leader}) {
+function RenderLeader({ leader }) {
     return (
         <Media key={leader.id} tag="li" className="mt-5">
           <Media left middle>
