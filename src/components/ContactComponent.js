@@ -142,7 +142,7 @@ class Contact extends Component {
                                       <Input type="text" id="firstname" name="firstname"
                                           placeholder="First Name"
                                           value={this.state.firstname}
-                                          valid={errors.firstname === ''}
+                                          valid={this.state.touched.firstname && errors.firstname === ''}
                                           invalid={errors.firstname !== ''}
                                           onBlur={this.handleBlur('firstname')}
                                           onChange={this.handleInputChange} />
@@ -155,7 +155,7 @@ class Contact extends Component {
                                       <Input type="text" id="lastname" name="lastname"
                                           placeholder="Last Name"
                                           value={this.state.lastname}
-                                          valid={errors.lastname === ''}
+                                          valid={this.state.touched.lastname && errors.lastname === ''}
                                           invalid={errors.lastname !== ''}
                                           onBlur={this.handleBlur('lastname')}
                                           onChange={this.handleInputChange} />
@@ -168,7 +168,7 @@ class Contact extends Component {
                                       <Input type="tel" id="telnum" name="telnum"
                                           placeholder="Tel. number"
                                           value={this.state.telnum}
-                                          valid={errors.telnum === ''}
+                                          valid={this.state.touched.telnum && errors.telnum === ''}
                                           invalid={errors.telnum !== ''}
                                           onBlur={this.handleBlur('telnum')}
                                           onChange={this.handleInputChange} />
@@ -181,7 +181,7 @@ class Contact extends Component {
                                       <Input type="email" id="email" name="email"
                                           placeholder="Email"
                                           value={this.state.email}
-                                          valid={errors.email === ''}
+                                          valid={this.state.touched.email && errors.email === ''}
                                           invalid={errors.email !== ''}
                                           onBlur={this.handleBlur('email')}
                                           onChange={this.handleInputChange} />
