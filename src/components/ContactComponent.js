@@ -15,13 +15,12 @@ class Contact extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
   handleSubmit(values) {
-      alert('Current State is: ' + JSON.stringify(values));
+      this.props.postFeedback(values);
       this.props.resetFeedbackForm();
   }
 

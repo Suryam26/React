@@ -7,6 +7,37 @@ export const addComment = (comment) => ({
     payload: comment
 });
 
+export const postFeedback = (values) => (dispatch) => {
+
+  return fetch(baseUrl + 'feedback', {
+         method: "POST",
+         body: JSON.stringify(values),
+         headers: {
+           "Content-Type": "application/json"
+         },
+         credentials: "same-origin"
+     })
+     .then(response => {
+         if (response.ok) {
+           return response;
+         }
+         else {
+           var error = new Error('Error ' + response.status + ': ' + response.statusText);
+           error.response = response;
+           throw error;
+         }
+       },
+       error => {
+             throw error;
+       })
+       .then(response => response.json())
+       .then(response => alert("Thank you for your feedback!\n " + JSON.stringify(response)))
+       .catch(error =>  {
+            console.log('post comments', error.message);
+            alert('Your Feedback could not be posted\nError: '+ error.message);
+          });
+};
+
 
 export const postComment = (dishId, rating, author, comment) => (dispatch) => {
 
